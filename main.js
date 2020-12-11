@@ -22,7 +22,7 @@ app.post('/send_message', async (req, res) => {
   res.send('Hello World!');
 })
 
-app.listen(3000, () => {
+app.listen(63000, () => {
   console.log('示例应用正在监听 3000 端口!');
   BOT = new Wechaty({
     puppet,

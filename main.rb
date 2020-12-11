@@ -62,7 +62,7 @@ def message(swap)
   # total 购买/出售数量
   # amount 购买/出售价值
   message = "#{swap[:side] == '卖出' ? "📉" : "📈"}#{ENV['coin']} 当前 #{swap[:side]} #{swap[:total].to_d.round(2)} 个 #{ENV['coin']}, 平均价格 #{swap[:price].round(2)}(≈ $#{swap[:price_usd].round(2)})"
-  RestClient.post("http://localhost:3000/send_message", {:name => "#{ENV['coin']}-Uniswap-交易提醒", :message => message}.to_json, headers={"Content-Type": "application/json"})
+  RestClient.post("http://localhost:63000/send_message", {:name => "#{ENV['coin']}-Uniswap-交易提醒", :message => message}.to_json, headers={"Content-Type": "application/json"})
 
   swap
 end
